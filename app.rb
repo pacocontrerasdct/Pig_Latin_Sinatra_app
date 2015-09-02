@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require_relative './models/begins_with_vowel'
-require_relative './models/begins_with_consonant'
+require_relative './models/translating_to_pig'
 
 get '/' do
   @title = 'My Pig Latin Translator'
@@ -14,7 +13,12 @@ post '/' do
   
   word = params[:translator_input].downcase
   
-  @translation = Capitalize.cap word
+  @translation = 
+  if word[0] == /[aeiou]/
+    Pignerization.vowel word
+  else
+    Pignerization.consonant word
+  end
   
   # puts @translation // this, puts word in terminal
 
