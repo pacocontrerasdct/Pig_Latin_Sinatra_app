@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+</head>
+<body>
+  <div style="margin: 0 auto; border:  0; width: 300px;">
+
+    <div style="background-color: pink; width: 300px; height: auto; text-align: center; padding: 10px 15px;">
+      <h1>Pig Latin Translator</h1>
+      <form action="/" method="post">
+        <input type="text" name="translator_input" autofocus>
+        <button>Translate me!</button>
+      </form>
+
+    </div>
+
+
+    <div style="background-color: yellow; width: 300px; height: auto; text-align: center; padding: 10px 15px;">
+      <h1><%= @translation %></h1>
+    </div>
+  </div>
+</body>
+</html>
